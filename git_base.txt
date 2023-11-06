@@ -1,0 +1,22 @@
+UTILISATION GIT
+
+1) recupérer le depot git sur son ordinateur
+    git clone "lien shs du projet"
+
+2) ajouter du travail sur le depot
+    git add nom_du_fichier OU git add * → * ou . pour ajouter toutes les modifications
+                  git add .
+    git commit -m "message_du_commit" → un push doit toujours etre accompagné d'un message
+    git push
+
+3) récuperer le travail sur le depot
+    git pull
+
+4) supprimer un fichier du depot
+    git rm "nom_du_fichier" OU git rm -rf "nom_du_dossier"
+    git commit -m "message_du_commit"
+    git push
+
+BONNES PRATIQUES GIT :
+    TOUJOURS travailler sur un répertoire local à la machine !!
+    Prévenir l'equipe quand on va push
