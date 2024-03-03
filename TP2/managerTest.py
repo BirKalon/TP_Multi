@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     manager.QueueManager.register("get_tasks", callable=lambda: taskQueue)
     print("isHere managerTest1")
-    manager.QueueManager.register("get_result", callable=lambda: resultQueue)
+    manager.QueueManager.register("get_results", callable=lambda: resultQueue)
     print("isHere managerTest2")
 
     try:
