@@ -30,27 +30,27 @@ class Task:
         )  # compute the time needed for the linalg solveer
 
     # create a doc with all needed info inside
-    def to_json(self):
+    def to_json(self) -> str:
         info = {
             "id": self.id,
             "size": self.size,
             "x": self.x.tolist(),
             "y": self.y.tolist(),
-            "z": self.z.tolist(),
+            # "z": self.z.tolist(),
             "time": self.time,
         }
         return json.dumps(info)
 
     @classmethod
-    def from_json(cls, text: str):
+    def from_json(cls, text: str) -> "Task":
         info = json.loads(text)
         task = cls(id=info["id"], size=info["size"], x=info["x"], y=info["y"])
-        task.z = np.array(info["z"])
+        # task.z = np.array(info["z"])
         task.time = info["time"]
         return task
 
-    def eq(self, task):
-        if isinstance(task, Task):
-            if np.array_equal(self.x, task.x) and np.array_equal(self.y, task.y):
+    def __eq__(self, other: "Task") -> bool:
+        if isinstance(other, Task):
+            if np.array_equal(self.x, other.x) and np.array_equal(self.y, other.y):
                 return True
             return False
